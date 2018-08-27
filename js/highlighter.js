@@ -7,9 +7,12 @@ function highlightNames() {
 
     for (i=0; i < authors.length; i++) {
         author = authors[i];
-
-        if (author.innerHTML === "LPLinuZ") {
-            $(author).addClass("developer");
+        if ($(author).hasClass("cozy-parsed")) {
+        } else {
+            if (author.innerHTML === "LPLinuZ") {
+                $(author).addClass("developer");
+            }
+            $(author).addClass("cozy-parsed")
         }
     }
 }

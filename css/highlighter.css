@@ -4,7 +4,14 @@
 }
 
 .developer::after {
-    content: " ♥";
+    content: url("../assets/developer-badge.png");
+}
+
+.developer::before {
+    width: 28px;
+    height: 28px;
+    content: url("../assets/developer-badge.png");
+    position: relative;
 }
 
 .developer:hover {
