@@ -1,0 +1,23 @@
+.front-page-carousel {
+    display: none;
+}
+
+.blue-bar {
+    display: none;
+}
+
+.side-nav {
+    width: 400px !important;
+}
+
+/* .tw-mg-b-2 {
+    display: none;
+} */
+
+.tw-image {
+    transition: opacity 0.04s ease-in-out;
+}
+
+.tw-image:hover {
+    opacity: 0.5;
+}

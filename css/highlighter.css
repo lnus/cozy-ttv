@@ -1,0 +1,12 @@
+.developer {
+    color: white !important;
+    text-shadow: 0px 0px 5px gold;
+}
+
+.developer::after {
+    content: " ♥";
+}
+
+.developer:hover {
+    border-bottom-color: gold !important;
+}
