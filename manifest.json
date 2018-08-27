@@ -3,19 +3,25 @@
     "name": "Cozy TTV",
     "description": "An extension to make TTV cozy. Adds emotes and shit.",
     "version": "0.0.3",
-    "icons": {"128": "assets/icon_128.png"},
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.twitch.tv/*",
-                "https://www.twitch.tv/",
-                "http://www.twitch.tv/*",
-                "http://www.twitch.tv/"
-            ],
-            "css": ["css/content.css", "css/highlighter.css"],
-            "js": ["js/jquery.min.js", "js/content.js", "js/highlighter.js", "js/emotes.js"]
-        }
-    ],
+    "icons": {
+        "128": "assets/icon_128.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://www.twitch.tv/*",
+            "https://www.twitch.tv/",
+            "http://www.twitch.tv/*",
+            "http://www.twitch.tv/"
+        ],
+        "css": ["css/content.css", "css/highlighter.css"],
+        "js": ["utils/jquery.min.js",
+            "utils/tmi.min.js",
+            "js/gatherer.js",
+            "js/content.js",
+            "js/highlighter.js",
+            "js/emotes.js"
+        ]
+    }],
     "browser_action": {
         "default_icon": "assets/icon.png",
         "default_popup": "html/popup.html"

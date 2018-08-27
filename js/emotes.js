@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    var emoteInterval = window.setInterval(displayEmotes, 100);
+    // var emoteInterval = window.setInterval(displayEmotes, 100);
     const url = chrome.runtime.getURL("data/emotes.json");
+
+    console.log("Emote function ready :thumbsup:")
 
     fetch(url)
         .then((response) => response.json())
