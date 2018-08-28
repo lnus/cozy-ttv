@@ -3,11 +3,11 @@
     text-shadow: 0px 0px 5px gold;
 }
 
-/*
-.developer::before {
-    content: url("https://i.imgur.com/XzwPi62.png")
-}
-*/
 .developer:hover {
     text-shadow: 0px 0px 9px gold;
+}
+
+.supporter {
+    color: white !important;
+    text-shadow: 0px 0px 3px lime;
 }

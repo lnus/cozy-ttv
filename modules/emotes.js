@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    // var emoteInterval = window.setInterval(displayEmotes, 100);
     const url = chrome.runtime.getURL("data/emotes.json");
 
     console.log("Emote function ready :thumbsup:")
@@ -12,19 +11,9 @@ $(document).ready(function(){
                                 ));
 })
 
-function displayEmotes() {
-    messages = document.getElementsByClassName("message");
-    for (i=0; i < messages.length; i++) {
-        message = messages[i];
-        if ($(message).hasClass("cozy-parsed")) {
-        } else {
-            message = messages[i];
-            content = message.childNodes[0];
-            contentInner = content.innerHTML;
-            content.innerHTML = replaceEmoticons(contentInner, emotes);
-            $(message).addClass("cozy-parsed");
-        }
-    }
+function convertToEmotes(message) {
+    contentInner = message.innerHTML
+    message.innerHTML = replaceEmoticons(contentInner, emotes);
 }
 
 // Regex to replace text with emoticon if it matches
@@ -43,7 +32,7 @@ function RegExpEscape(text) {
 
 // Map emote IDs to URLs.
 function mapIdsToPaths(json, url, prefix, size="28x28") {
-    emotes = json[0];
+    emotes = json;
     Object.keys(emotes).forEach((id) => {
         // emote_url = url + prefix + emotes[id] + "-" + size + ".png";
         emote_url = url + prefix + emotes[id] + ".png";
