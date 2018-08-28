@@ -20,7 +20,7 @@ function convertToEmotes(message) {
 function replaceEmoticons(text, emotes) {
     return Object.keys(emotes).reduce((result, emote) => {
         return result.replace(new RegExp(RegExpEscape(emote), "gi"), function(match) {
-            return (img => img != null ? "<img width='auto' height='28px' src='" + img + "'/>" : match)(emotes[match])
+            return (img => img != null ? "<span><img width='auto' height='28px' src='" + img + "'/></span>" : match)(emotes[match])
         });
     }, text);
 }
